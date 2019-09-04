@@ -23,12 +23,12 @@
                   <iv-rate v-model="book.grade" disabled :allowHalf="true"></iv-rate>
                 </p>
                 <iv-tag type="border" v-for="tag in book.tagList" :key="tag.name"
-                       class="border-tag">{{ tag.name }}
+                        class="border-tag">{{ tag.name }}
                 </iv-tag>
               </div>
               <div class="rating"></div>
             </div>
-            <vue-tabs class="book-detail-info" >
+            <vue-tabs class="book-detail-info">
               <v-tab :title="'简介'">
                 <p class="summary" v-html="book.description"></p>
               </v-tab>
@@ -38,7 +38,7 @@
               <v-tab :title="'原书目录'">
                 <p class="catalog" v-html="book.catalogue"></p>
               </v-tab>
-              <v-tab :title="'读后感'" >
+              <v-tab :title="'读后感'">
                 <div class="article-details" id="article-main-page" ref="book" v-if="book.bookSense">
                   <div class="detail">
                     <article class="typo container article-main-content"
@@ -53,7 +53,7 @@
               </v-tab>
             </vue-tabs>
           </div>
-          <social-section  :post-id="book.id" :type="'Book'" ></social-section>
+          <social-section :post-id="book.id" :type="'Book'"></social-section>
         </div>
       </iv-col>
       <iv-col :xs="0" :sm="0" :md="0" :lg="7">
@@ -66,49 +66,49 @@
 </template>
 
 <script type="text/ecmascript-6">
-import {VueTabs, VTab} from 'vue-nav-tabs'
-import 'vue-nav-tabs/themes/paper.css'
-import BookCatalog from '@/components/views/Book/BookCatalog'
-import Recommend from '@/components/views/Recommend'
-import SocialSection from '@/components/views/Comment/SocialSection'
-import SideToc from '@/components/views/SideToc'
-// mixin
-import {mixin} from '@/utils'
+    import {VueTabs, VTab} from 'vue-nav-tabs'
+    import 'vue-nav-tabs/themes/paper.css'
+    import BookCatalog from '@/components/views/Book/BookCatalog'
+    import Recommend from '@/components/views/Recommend'
+    import SocialSection from '@/components/views/Comment/SocialSection'
+    import SideToc from '@/components/views/SideToc'
+    // mixin
+    import {mixin} from '@/utils'
 
-export default {
-  name: 'book-content',
-  data () {
-    return {
-      book: {}
-    }
-  },
-  mixins: [mixin],
-  components: {
-    'vue-tabs': VueTabs,
-    'v-tab': VTab,
-    'book-catalog': BookCatalog,
-    'social-section': SocialSection,
-    'recommend': Recommend,
-    'side-toc': SideToc
-  },
-  created () {
-    this.getBook(this.$route.params.bookId)
-  },
-  methods: {
-    getBook (bookId) {
-      this.$http({
-        url: this.$http.adornUrl('/book/' + bookId),
-        method: 'get',
-        params: this.$http.adornParams()
-      }).then(({data}) => {
-        if (data && data.code === 200) {
-          this.book = data.book
-          document.title = this.book.title + ' | Bobbi的个人博客 | 一个努力成长中的Java后端程序猿'
+    export default {
+        name: 'book-content',
+        data() {
+            return {
+                book: {}
+            }
+        },
+        mixins: [mixin],
+        components: {
+            'vue-tabs': VueTabs,
+            'v-tab': VTab,
+            'book-catalog': BookCatalog,
+            'social-section': SocialSection,
+            'recommend': Recommend,
+            'side-toc': SideToc
+        },
+        created() {
+            this.getBook(this.$route.params.bookId)
+        },
+        methods: {
+            getBook(bookId) {
+                this.$http({
+                    url: this.$http.adornUrl('/book/' + bookId),
+                    method: 'get',
+                    params: this.$http.adornParams()
+                }).then(({data}) => {
+                    if (data && data.code === 200) {
+                        this.book = data.book
+                        document.title = this.book.title + ' | Bobbi的个人博客 | 一个努力成长中的Java后端程序猿'
+                    }
+                })
+            }
         }
-      })
     }
-  }
-}
 </script>
 
 <style lang="stylus" type="text/stylus" rel="stylesheet/stylus">
@@ -126,6 +126,7 @@ export default {
     @media screen and (min-width: 1200px)
       width 1200px
       margin 15px auto 0
+
     .layout-left, .layout-right
       padding 0
       @media only screen and (max-width: 768px)
@@ -136,21 +137,26 @@ export default {
         padding 0 10px
       @media screen and (min-width: 1200px)
         padding 0 10px
+
     .book-infos
       .book-base-info
         display flex
         margin-bottom 15px
+
         .img
           position relative
           flex 0 0 140px
           width 140px
           overflow hidden
+
           .container
             width 100%
             position relative
             overflow hidden
+
             .bracket
               margin-top 140%
+
             .target
               position absolute
               top 0
@@ -158,14 +164,17 @@ export default {
               left 0
               right 0
               border 1px solid $default-border-color
+
               > img
                 width 100%
                 height 100%
                 transition All 0.4s ease-in-out
                 transform scale(1.0)
                 zoom 1.0
+
         .info
           padding-left 15px
+
           .title
             font-size 20px
             line-height 28px
@@ -173,6 +182,7 @@ export default {
             color $default-title-color
             margin-bottom 5px
             text-align justify
+
           .desc
             font-size 14px
             font-weight 100
@@ -180,9 +190,11 @@ export default {
             color $default-desc-color
             text-align justify
             margin-bottom 3px
+
             > span
               color $default-desc-color
               font-weight 700
+
       .book-detail-info
         p.summary, p.author, p.catalog
           font-size 14px
@@ -190,25 +202,32 @@ export default {
           line-height 23px
           text-align justify
           color $default-desc-color
+
         .nav-tabs-navigation
           border-bottom 1px solid $default-border-color
           margin-bottom 20px
+
           .nav-tabs
             li
               margin-bottom 0
               font-weight 400
+
               a
                 color $default-info-color
+
                 &.active_tab
                   color $default-info-hover-color
+
                 &::before
                   bottom 2px
                   background transparent
                   border-bottom 11px solid $default-border-color
+
                 &::after
                   bottom 1px
                   background transparent
                   border-bottom 11px solid $default-body-background-color
+
         .detail-footer
           text-align right
           font-size 12px

@@ -1,28 +1,26 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import {LoadingBar} from 'iview'
-import Index from '@/components/index/Index'
-
+import Index from '../components/index/Index'
 // 公共区域
-// import CommonHeader from '@/components/header/CommonHeader';
-import SimpleHeader from '@/components/header/SimpleHeader/SimpleHeader'
-import CommonFooter from '@/components/footer/CommonFooter'
-
+// import CommonHeader from '../components/header/CommonHeader';
+import SimpleHeader from '../components/header/SimpleHeader/SimpleHeader'
+import CommonFooter from '../components/footer/CommonFooter'
 // 首页
-import HomeContent from '@/components/content/HomeContent'
-import ArticleContent from '@/components/content/ArticleContent'
-import BookNoteContent from '@/components/content/BookNoteContent'
-import BookContent from '@/components/content/BookContent'
-import ArticleListContent from '@/components/content/ArticleListContent'
-import BookListContent from '@/components/content/BookListContent'
-import TimeLineContent from '@/components/content/TimeLineContent'
-import SearchResultContent from '@/components/content/SearchResultContent'
+import HomeContent from '../components/content/HomeContent'
+import ArticleContent from '../components/content/ArticleContent'
+import BookNoteContent from '../components/content/BookNoteContent'
+import BookContent from '../components/content/BookContent'
+import ArticleListContent from '../components/content/ArticleListContent'
+import BookListContent from '../components/content/BookListContent'
+import TimeLineContent from '../components/content/TimeLineContent'
+import SearchResultContent from '../components/content/SearchResultContent'
 
 Vue.use(Router)
 
 let router = new Router({
   mode: 'history',
-  scrollBehavior: () => ({ y: 0 }),
+  scrollBehavior: () => ({y: 0}),
   routes: [
     {
       path: '/',

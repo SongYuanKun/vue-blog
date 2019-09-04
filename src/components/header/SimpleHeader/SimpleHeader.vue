@@ -101,12 +101,12 @@ export default {
     },
     listCategory () {
       this.$http({
-        url: this.$http.adornUrl('/operation/categories'),
+        url: this.$http.adornUrl('category/select'),
         method: 'get',
         params: this.$http.adornParams()
       }).then(({data}) => {
-        if (data && data.code === 200) {
-          data.categoryList.forEach(category => {
+        if (data && data.code === 0) {
+          data.data.forEach(category => {
             if (category.type === 0) {
               this.articleCategoryList.push(category)
             } else if (category.type === 1) {
