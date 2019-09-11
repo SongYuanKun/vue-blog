@@ -56,12 +56,13 @@ export default {
   methods: {
     listRecommend () {
       this.$http({
-        url: this.$http.adornUrl('/operation/recommends'),
+        url: this.$http.adornUrl('recommend/recommends'),
         method: 'get',
         params: this.$http.adornParams()
       }).then(({data}) => {
-        if (data && data.code === 200) {
-          this.recommendList = data.recommendList
+        console.info(data);
+        if (data && data.code === 0) {
+          this.recommendList = data.data;
           this.topRecommend = this.recommendList.shift()
         }
       })

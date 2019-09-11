@@ -1,37 +1,28 @@
 <template>
-  <div class="home-content">
-    <iv-row>
-      <iv-col :xs="24" :sm="24" :md="24" :lg="17" :xl="17">
-        <div class="layout-left">
-          <section-title :mainTitle="'文章'" :subTitle="'Articles'" :tipText="'View More'" :tipHref="'/articles'">
-            <title-menu-filter @filterByMenu="refreshArticle" slot="menu"
-                               :menu-filter-list="defaultFilterList"></title-menu-filter>
-          </section-title>
-          <article-list-cell v-for="article in articleList" :article="article" :key="article.title"
-                             :type="'article'"></article-list-cell>
-          <section-title :mainTitle="'阅读'" :subTitle="'Books'" :tipText="'View More'" :tipHref="'/books'">
-            <title-menu-filter @filterByMenu="refreshBook" slot="menu"></title-menu-filter>
-          </section-title>
-          <book-list-cell v-for="book in bookList" :book="book" :key="book.title" :type="'book'"></book-list-cell>
-          <section-title :mainTitle="'笔记'" :subTitle="'Notes'" :tipText="'View More'" :tipHref="'/books'">
-            <title-menu-filter @filterByMenu="refreshBookNote" slot="menu"
-                               :menu-filter-list="bookNoteFilterList"></title-menu-filter>
-          </section-title>
-          <book-note-list-cell v-for="bookNote in bookNoteList" :bookNote="bookNote"
-                               :key="bookNote.title"></book-note-list-cell>
-        </div>
-      </iv-col>
-      <iv-col :xs="0" :sm="0" :md="0" :lg="7">
-        <div class="layout-right">
-          <about></about>
-          <recommend></recommend>
-          <hot-read></hot-read>
-          <friend-links style="margin-top:15px;"></friend-links>
-          <tag-wall style="margin-top: 15px;"></tag-wall>
-        </div>
-      </iv-col>
-    </iv-row>
-  </div>
+    <div class="home-content">
+        <iv-row>
+            <iv-col :xs="24" :sm="24" :md="24" :lg="17" :xl="17">
+                <div class="layout-left">
+                    <section-title :mainTitle="'文章'" :subTitle="'Articles'" :tipText="'View More'"
+                                   :tipHref="'/articles'">
+                        <title-menu-filter @filterByMenu="refreshArticle" slot="menu"
+                                           :menu-filter-list="defaultFilterList"></title-menu-filter>
+                    </section-title>
+                    <article-list-cell v-for="article in articleList" :article="article" :key="article.title"
+                                       :type="'article'"></article-list-cell>
+                </div>
+            </iv-col>
+            <iv-col :xs="0" :sm="0" :md="0" :lg="7">
+                <div class="layout-right">
+                    <about></about>
+                    <recommend></recommend>
+                    <hot-read></hot-read>
+                    <friend-links style="margin-top:15px;"></friend-links>
+                    <tag-wall style="margin-top: 15px;"></tag-wall>
+                </div>
+            </iv-col>
+        </iv-row>
+    </div>
 </template>
 
 <script type="text/ecmascript-6">
@@ -61,7 +52,7 @@
                 bookList: [],
                 defaultFilterList: DefaultFilterList,
                 pageParam: {
-                    page: 1,
+                    currentPage: 1,
                     pageSize: DefaultLimitSize
                 },
                 bookNoteFilterList: JSON.parse(JSON.stringify(DefaultFilterList))
@@ -88,46 +79,17 @@
             let param = {}
             param.latest = true
             this.refreshArticle(param)
-            this.refreshBook(param)
-            this.refreshBookNote(param)
         },
         methods: {
             refreshArticle(param) {
                 let params = merge(param, this.pageParam)
                 this.$http({
-                    url: this.$http.adornUrl('/articles'),
+                    url: this.$http.adornUrl('article/page'),
                     params: this.$http.adornParams(params, false),
                     method: 'get'
                 }).then(({data}) => {
-                    if (data && data.code === 200) {
-                        this.articleList = data.page.list
-                    }
-                })
-            },
-            refreshBook(param) {
-                let params = merge(param, this.pageParam)
-                this.$http({
-                    url: this.$http.adornUrl('/books'),
-                    params: this.$http.adornParams(params, false),
-                    method: 'get'
-                }).then(({data}) => {
-                    if (data && data.code === 200) {
-                        this.bookList = data.page.list
-                        this.bookList.forEach(book => {
-                            book.coverType = 2
-                        })
-                    }
-                })
-            },
-            refreshBookNote(param) {
-                let params = merge(param, this.pageParam, false)
-                this.$http({
-                    url: this.$http.adornUrl('/bookNotes'),
-                    params: this.$http.adornParams(params),
-                    method: 'get'
-                }).then(({data}) => {
-                    if (data && data.code === 200) {
-                        this.bookNoteList = data.page.list
+                    if (data && data.code === 0) {
+                        this.articleList = data.data.content
                     }
                 })
             }
@@ -136,25 +98,25 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  .home-content
-    width auto
-    @media only screen and (max-width: 768px)
-      margin 5px 5px 10px 5px
-    @media screen and (min-width: 768px)
-      margin 10px 10px 20px 10px
-    @media screen and (min-width: 992px)
-      margin 15px 35px 50px 35px
-    @media screen and (min-width: 1200px)
-      width 1200px
-      margin 15px auto 0
-      .layout-left, .layout-right
-        padding 0
+    .home-content
+        width auto
         @media only screen and (max-width: 768px)
-          padding 0
+            margin 5px 5px 10px 5px
         @media screen and (min-width: 768px)
-          padding 0
+            margin 10px 10px 20px 10px
         @media screen and (min-width: 992px)
-          padding 0 10px
+            margin 15px 35px 50px 35px
         @media screen and (min-width: 1200px)
-          padding 0 10px
+            width 1200px
+            margin 15px auto 0
+            .layout-left, .layout-right
+                padding 0
+                @media only screen and (max-width: 768px)
+                    padding 0
+                @media screen and (min-width: 768px)
+                    padding 0
+                @media screen and (min-width: 992px)
+                    padding 0 10px
+                @media screen and (min-width: 1200px)
+                    padding 0 10px
 </style>
