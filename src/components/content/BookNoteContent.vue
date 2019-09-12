@@ -73,14 +73,14 @@
                         // 更新目录、高亮代码
                         this.$nextTick(function () {
                             this.addCodeLineNumber()
-                            this.refreshDiectory()
+                            this.refreshDirectory()
                             this.refreshMobileDirectory()
                             document.title = this.bookNote.title + ' | Bobbi的个人博客 | 一个努力成长中的Java后端程序猿'
                         })
                     }
                 })
             },
-            refreshDiectory() {
+            refreshDirectory() {
                 /* eslint-disable*/
                 new TOC('article-main-page', {
                     'level': 5,

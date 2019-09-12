@@ -24,14 +24,14 @@
     </div>
 </template>
 <script type="text/ecmascript-6">
-    import ArticlePageHeader from '@/components/views/Article/ArticlePageHeader'
-    import ArticlePageContent from '@/components/views/Article/ArticlePageContent'
-    import ArticlePageFooter from '@/components/views/Article/ArticlePageFooter'
-    import About from '@/components/views/About'
-    import FriendLinks from '@/components/views/FriendLinks'
-    import SideToc from '@/components/views/SideToc'
-    import Recommend from '@/components/views/Recommend'
-    import TOC from '@/common/js/MarkdownToc'
+    import ArticlePageHeader from '../views/Article/ArticlePageHeader'
+    import ArticlePageContent from '../views/Article/ArticlePageContent'
+    import ArticlePageFooter from '../views/Article/ArticlePageFooter'
+    import About from '../views/About'
+    import FriendLinks from '../views/FriendLinks'
+    import SideToc from '../views/SideToc'
+    import Recommend from '../views/Recommend'
+    import TOC from '../../common/js/MarkdownToc'
     // TOC滚动监听
     import TocScrollSpy from '../../common/js/TocScrollSpy'
 
@@ -59,7 +59,7 @@
                 let blocks = this.$refs.article.querySelectorAll('pre code');
                 console.info(blocks);
                 blocks.forEach((block) => {
-                    window.hljs.highlightBlock(block)
+                    window.hljs.highlightBlock(block);
                     // 去前后空格并添加行号
                     block.innerHTML = '<ul><li>' + block.innerHTML.replace(/(^\s*)|(\s*$)/g, '').replace(/\n/g, '\n</li><li>') + '\n</li></ul>'
                 })
@@ -75,21 +75,21 @@
                         // 更新目录、高亮代码
                         // this.$nextTick(function () {
                         //     this.addCodeLineNumber();
-                        //     this.refreshDiectory();
+                        //     this.refreshDirectory();
                         //     this.refreshMobileDirectory();
                         //     document.title = this.article.title + ' | Bobbi的个人博客 | 一个努力成长中的Java后端程序猿'
                         // })
                     }
                 })
             },
-            refreshDiectory() {
+            refreshDirectory() {
                 /* eslint-disable*/
                 new TOC('article-main-page', {
                     'level': 5,
                     'top': 200,
                     'class': 'list',
                     'targetId': 'side-toc'
-                })
+                });
                 /* eslint-disable */
                 new TocScrollSpy('article-main-page', 'side-toc', {
                     'spayLevel': 5,
@@ -103,7 +103,7 @@
                     'top': 200,
                     'class': 'list',
                     'targetId': 'sidebar-toc'
-                })
+                });
                 new TocScrollSpy('article-main-page', 'sidebar-toc', {
                     'spayLevel': 5,
                     'articleMarginTop': 15
