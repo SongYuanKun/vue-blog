@@ -17,7 +17,6 @@
                     <about></about>
                     <recommend></recommend>
                     <hot-read></hot-read>
-                    <friend-links style="margin-top:15px;"></friend-links>
                     <tag-wall style="margin-top: 15px;"></tag-wall>
                 </div>
             </iv-col>
@@ -26,23 +25,22 @@
 </template>
 
 <script type="text/ecmascript-6">
-    import ArticleListCell from '@/components/views/Article/ArticleListCell'
-    import BookNoteListCell from '@/components/views/BookNote/BookNoteListCell'
-    import BookListCell from '@/components/views/Book/BookListCell'
-    import SectionTitle from '@/components/views/SectionTitle/SectionTitle'
-    import TitleMenuFilter from '@/components/views/SectionTitle/TitleMenuFilter'
-    import ArticlePageHeader from '@/components/views/Article/ArticlePageHeader'
-    import ArticlePageContent from '@/components/views/Article/ArticlePageContent'
-    import ArchiveListTimeTitle from '@/components/views/Archive/ArchiveListTimeTitle'
-    import ArchiveListCell from '@/components/views/Archive/ArchiveListCell'
-    import About from '@/components/views/About'
-    import FriendLinks from '@/components/views/FriendLinks'
-    import TagWall from '@/components/views/TagWall'
-    import Recommend from '@/components/views/Recommend'
-    import HotRead from '@/components/views/HotRead'
-    import SideToc from '@/components/views/SideToc'
-    import merge from 'lodash/merge' // 合并对象工具
-    import {DefaultFilterList, DefaultLimitSize} from '@/common/js/const'
+    import ArticleListCell from '../../components/views/Article/ArticleListCell'
+    import BookNoteListCell from '../../components/views/BookNote/BookNoteListCell'
+    import BookListCell from '../../components/views/Book/BookListCell'
+    import SectionTitle from '../../components/views/SectionTitle/SectionTitle'
+    import TitleMenuFilter from '../../components/views/SectionTitle/TitleMenuFilter'
+    import ArticlePageHeader from '../../components/views/Article/ArticlePageHeader'
+    import ArticlePageContent from '../../components/views/Article/ArticlePageContent'
+    import ArchiveListTimeTitle from '../../components/views/Archive/ArchiveListTimeTitle'
+    import ArchiveListCell from '../../components/views/Archive/ArchiveListCell'
+    import About from '../../components/views/About'
+    import TagWall from '../../components/views/TagWall'
+    import Recommend from '../../components/views/Recommend'
+    import HotRead from '../../components/views/HotRead'
+    import SideToc from '../../components/views/SideToc'
+    import merge from 'lodash/' // 合并对象工具
+    import {DefaultFilterList, DefaultLimitSize} from '../../common/js/const'
 
     export default {
         data() {
@@ -69,20 +67,19 @@
             'archive-list-time-title': ArchiveListTimeTitle,
             'archive-list-cell': ArchiveListCell,
             'about': About,
-            'friend-links': FriendLinks,
             'side-toc': SideToc,
             'tag-wall': TagWall,
             'recommend': Recommend,
             'hot-read': HotRead
         },
         created: function () {
-            let param = {}
-            param.latest = true
+            let param = {};
+            param.latest = true;
             this.refreshArticle(param)
         },
         methods: {
             refreshArticle(param) {
-                let params = merge(param, this.pageParam)
+                let params = merge(param, this.pageParam);
                 this.$http({
                     url: this.$http.adornUrl('article/page'),
                     params: this.$http.adornParams(params, false),

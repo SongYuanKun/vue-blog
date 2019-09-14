@@ -41,7 +41,7 @@
 </template>
 
 <script type="text/ecmascript-6">
-    import {mixin} from '../../utils/index'
+    import {mapTagColor, mixin} from '../../utils/index'
     import Panel from '../utils/Panel'
 
     export default {
@@ -57,18 +57,20 @@
         },
         methods: {
             listHotRead() {
-                let params = merge(param, this.pageParam)
                 this.$http({
-                    url: this.$http.adornUrl('article/page'),
-                    params: this.$http.adornParams(params, false),
+                    url: this.$http.adornUrl('article/hotReads'),
                     method: 'get'
                 }).then(({data}) => {
-                    if (data && data.code === 200) {
+                    if (data && data.code === 0) {
                         this.hotReadList = data.data.content;
                         this.topHotRead = this.hotReadList.shift()
                     }
                 })
+            },
+            mapTagColor(index) {
+                return mapTagColor(index)
             }
+
         },
         components: {
             'panel': Panel
@@ -99,7 +101,7 @@
                     margin-bottom 5px
 
                 .info
-                    margin 5px 0 0px
+                    margin 5px 0 0
 
                     span
                         font-size 13px

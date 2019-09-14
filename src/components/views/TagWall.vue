@@ -27,7 +27,7 @@ export default {
   methods: {
     listTag () {
       this.$http({
-        url: this.$http.adornUrl('/tag/tags'),
+        url: this.$http.adornUrl('tag/tags'),
         method: 'get',
         params: this.$http.adornParams()
       }).then(({data}) => {

@@ -28,7 +28,6 @@
     import ArticlePageContent from '../views/Article/ArticlePageContent'
     import ArticlePageFooter from '../views/Article/ArticlePageFooter'
     import About from '../views/About'
-    import FriendLinks from '../views/FriendLinks'
     import SideToc from '../views/SideToc'
     import Recommend from '../views/Recommend'
     import TOC from '../../common/js/MarkdownToc'
@@ -46,7 +45,6 @@
             'article-page-content': ArticlePageContent,
             'article-page-footer': ArticlePageFooter,
             'about': About,
-            'friend-links': FriendLinks,
             'side-toc': SideToc,
             'recommend': Recommend
         },
@@ -66,19 +64,18 @@
             },
             getArticle(articleId) {
                 this.$http({
-                    url: this.$http.adornUrl('/article/' + articleId),
+                    url: this.$http.adornUrl('article/info/' + articleId),
                     method: 'get'
                 }).then(({data}) => {
                     console.info(data);
                     if (data && data.code === 0) {
                         this.article = data.data;
                         // 更新目录、高亮代码
-                        // this.$nextTick(function () {
-                        //     this.addCodeLineNumber();
-                        //     this.refreshDirectory();
-                        //     this.refreshMobileDirectory();
-                        //     document.title = this.article.title + ' | Bobbi的个人博客 | 一个努力成长中的Java后端程序猿'
-                        // })
+                        this.$nextTick(function () {
+                            this.addCodeLineNumber();
+                            this.refreshDirectory();
+                            this.refreshMobileDirectory();
+                        })
                     }
                 })
             },
