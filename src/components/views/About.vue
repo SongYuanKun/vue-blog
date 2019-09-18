@@ -2,8 +2,8 @@
   <div class="about">
     <img class="background" src="../../assets/background.jpg" alt="">
     <img class="avatar" src="../../assets/avatar.jpg" alt="">
-    <p class="name">哈士奇</p>
-    <p class="desc"></p>
+    <p class="name">HUSKY STUDIO</p>
+    <p class="desc">乐队排练 X 录音编曲 X 乐器培训 X 乐器销售</p>
     <div class="line"></div>
   </div>
 </template>
