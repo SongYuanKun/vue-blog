@@ -67,7 +67,6 @@
                     url: this.$http.adornUrl('article/info/' + articleId),
                     method: 'get'
                 }).then(({data}) => {
-                    console.info(data);
                     if (data && data.code === 0) {
                         this.article = data.data;
                         // 更新目录、高亮代码

@@ -113,7 +113,6 @@
                     params: this.$http.adornParams(params),
                     method: 'post'
                 }).then(({data}) => {
-                    console.info(data);
                     if (data && data.code === 0) {
                         this.noMoreData = data.data.totalPages <= data.page.numberOfElements;
                         this.articleList = this.articleList.concat(data.page.list)
