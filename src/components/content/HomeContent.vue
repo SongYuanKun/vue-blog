@@ -26,8 +26,6 @@
 
 <script type="text/ecmascript-6">
     import ArticleListCell from '../../components/views/Article/ArticleListCell'
-    import BookNoteListCell from '../../components/views/BookNote/BookNoteListCell'
-    import BookListCell from '../../components/views/Book/BookListCell'
     import SectionTitle from '../../components/views/SectionTitle/SectionTitle'
     import TitleMenuFilter from '../../components/views/SectionTitle/TitleMenuFilter'
     import ArticlePageHeader from '../../components/views/Article/ArticlePageHeader'
@@ -46,20 +44,15 @@
         data() {
             return {
                 articleList: [],
-                bookNoteList: [],
-                bookList: [],
                 defaultFilterList: DefaultFilterList,
                 pageParam: {
                     currentPage: 1,
                     pageSize: DefaultLimitSize
                 },
-                bookNoteFilterList: JSON.parse(JSON.stringify(DefaultFilterList))
             }
         },
         components: {
             'article-list-cell': ArticleListCell,
-            'book-note-list-cell': BookNoteListCell,
-            'book-list-cell': BookListCell,
             'section-title': SectionTitle,
             'title-menu-filter': TitleMenuFilter,
             'article-page-header': ArticlePageHeader,

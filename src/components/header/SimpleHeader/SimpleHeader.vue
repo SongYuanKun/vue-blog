@@ -32,7 +32,6 @@
       </li>
 
       <li><a href="/articles" class="nav-link contribute">文章</a></li>
-      <li><a href="/books" class="nav-link contribute">阅读</a></li>
       <li><a href="/timeline" class="nav-link contribute">时光轴</a></li>
       <li><a href="/article/1" class="nav-link contribute">关于</a></li>
     </ul>
