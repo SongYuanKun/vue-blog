@@ -65,7 +65,7 @@
                 this.$http({
                     url: this.$http.adornUrl('article/page'),
                     params: this.$http.adornParams(params),
-                    method: 'post'
+                    method: 'get'
                 }).then(({data}) => {
                     if (data && data.code === 0) {
                         this.noMoreData = data.data.totalPages <= data.data.numberOfElements;
@@ -111,13 +111,13 @@
                 this.$http({
                     url: this.$http.adornUrl('article/page'),
                     params: this.$http.adornParams(params),
-                    method: 'post'
+                    method: 'get'
                 }).then(({data}) => {
                     if (data && data.code === 0) {
                         this.noMoreData = data.data.totalPages <= data.page.numberOfElements;
                         this.articleList = this.articleList.concat(data.page.list)
                     }
-                }).then(response => {
+                }).then(() => {
                     this.$refs.browseMore.stopLoading();
                 }).catch(error => {
                     this.$refs.browseMore.stopLoading();

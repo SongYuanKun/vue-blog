@@ -26,11 +26,11 @@
 </template>
 
 <script type="text/ecmascript-6">
-    import TimeLineHeader from '@/components/views/TimeLine/TimeLineHeader'
-    import ArchiveListCell from '@/components/views/Archive/ArchiveListCell'
-    import ArchiveListTimeTitle from '@/components/views/Archive/ArchiveListTimeTitle'
-    import Recommend from '@/components/views/Recommend'
-    import TagWall from '@/components/views/TagWall'
+    import TimeLineHeader from '../views/TimeLine/TimeLineHeader'
+    import ArchiveListCell from '../views/Archive/ArchiveListCell'
+    import ArchiveListTimeTitle from '../views/Archive/ArchiveListTimeTitle'
+    import Recommend from '../views/Recommend'
+    import TagWall from '../views/TagWall'
 
     export default {
         data() {
@@ -55,8 +55,8 @@
                     method: 'get',
                     params: this.$http.adornParams()
                 }).then(({data}) => {
-                    if (data && data.code === 200) {
-                        this.timelineList = data.timelineList
+                    if (data && data.code === 0) {
+                        this.timelineList = data.data
                     }
                 })
             }
