@@ -1,7 +1,7 @@
 <template>
   <div class="common-footer">
     <p class="copyright">
-      <a href="http://www.miibeian.gov.cn/" target="_blank">{{ siteInfo.icp }}</a>
+      <a href="http://www.miitbeian.gov.cn" target="_blank">{{ siteInfo.icp }}</a>
       <span>|</span>
       {{ siteInfo.copyright }}
       <span>|</span>
