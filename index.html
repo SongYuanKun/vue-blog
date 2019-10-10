@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0.user-scalable=no">
-  <link rel="shortcut icon" type="image/x-icon" href="/static/img/favicon.ico">
-  <link href="https://cdn.bootcss.com/highlight.js/9.15.8/styles/solarized-light.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
-  <% if (process.env.NODE_ENV === 'production') { %>
-  <!-- 生产环境 -->
-  <script>document.write('<script src="/static/config/index-prod.js?t=' + new Date().getTime() + '"><\/script>');</script>
-  <% }else { %>
-  <!-- 开发环境 -->
-  <script src="/static/config/index-dev.js"></script>
-  <script type="text/javascript" src="https://s9.cnzz.com/z_stat.php?id=1278093668&web_id=1278093668"></script>
-  <% } %>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0.user-scalable=no">
+    <link rel="shortcut icon" type="image/x-icon" href="/static/img/favicon.ico">
+    <link href="https://cdn.bootcss.com/highlight.js/9.15.8/styles/solarized-light.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+    <script type="text/javascript" src="https://s9.cnzz.com/z_stat.php?id=1278093668&web_id=1278093668"></script>
+
+    <% if (process.env.NODE_ENV === 'production') { %>
+    <!-- 生产环境 -->
+    <script>document.write('<script src="/static/config/index-prod.js?t=' + new Date().getTime() + '"><\/script>');</script>
+    <% }else { %>
+    <!-- 开发环境 -->
+    <script src="/static/config/index-dev.js"></script>
+    <% } %>
 </head>
 <body class="docs">
 <div id="app"></div>
