@@ -51,7 +51,7 @@
         methods: {
             listTimeline() {
                 this.$http({
-                    url: this.$http.adornUrl('/timeline'),
+                    url: this.$http.adornUrl('timeline'),
                     method: 'get',
                     params: this.$http.adornParams()
                 }).then(({data}) => {
