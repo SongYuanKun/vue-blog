@@ -32,7 +32,7 @@ export default {
   methods: {
     likePost (post) {
       this.$http({
-        url: this.$http.adornUrl('/article/like/' + post.id),
+        url: this.$http.adornUrl('article/like/' + post.id),
         method: 'put',
         data: this.$http.adornData()
       }).then(({data}) => {
