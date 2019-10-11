@@ -36,7 +36,7 @@ let router = new Router({
             footer: CommonFooter
           },
           meta: {
-            title: 'Bobbi的个人博客 | 一个努力成长中的Java后端程序猿'
+            title: '哈士奇工作室 | 乐队排练 X 录音编曲 X 乐器培训 X 乐器销售'
           }
         },
         {
@@ -57,7 +57,7 @@ let router = new Router({
             footer: CommonFooter
           },
           meta: {
-            title: '博文列表 | Bobbi的个人博客 | 一个努力成长中的Java后端程序猿'
+            title: '博文列表 | 哈士奇工作室 | 乐队排练 X 录音编曲 X 乐器培训 X 乐器销售'
           }
         },
         {
@@ -69,7 +69,7 @@ let router = new Router({
             footer: CommonFooter
           },
           meta: {
-            title: '博文列表 | Bobbi的个人博客 | 一个努力成长中的Java后端程序猿'
+            title: '博文列表 | 哈士奇工作室 | 乐队排练 X 录音编曲 X 乐器培训 X 乐器销售'
           }
         },
         {
@@ -81,7 +81,7 @@ let router = new Router({
             footer: CommonFooter
           },
           meta: {
-            title: '博文搜索 | Bobbi的个人博客 | 一个努力成长中的Java后端程序猿'
+            title: '博文搜索 | 哈士奇工作室 | 乐队排练 X 录音编曲 X 乐器培训 X 乐器销售'
           }
         },
         {
@@ -111,7 +111,7 @@ let router = new Router({
             footer: CommonFooter
           },
           meta: {
-            title: '阅读 | Bobbi的个人博客 | 一个努力成长中的Java后端程序猿'
+            title: '阅读 | 哈士奇工作室 | 乐队排练 X 录音编曲 X 乐器培训 X 乐器销售'
           }
         },
         {
@@ -123,7 +123,7 @@ let router = new Router({
             footer: CommonFooter
           },
           meta: {
-            title: '阅读 | Bobbi的个人博客 | 一个努力成长中的Java后端程序猿'
+            title: '阅读 | 哈士奇工作室 | 乐队排练 X 录音编曲 X 乐器培训 X 乐器销售'
           }
         },
         {
@@ -135,7 +135,7 @@ let router = new Router({
             footer: CommonFooter
           },
           meta: {
-            title: '时间轴 | Bobbi的个人博客 | 一个努力成长中的Java后端程序猿'
+            title: '时间轴 | 哈士奇工作室 | 乐队排练 X 录音编曲 X 乐器培训 X 乐器销售'
           }
         }
       ]
