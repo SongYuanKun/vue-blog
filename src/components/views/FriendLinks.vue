@@ -38,7 +38,7 @@
                     method: 'get',
                     params: this.$http.adornParams()
                 }).then(({data}) => {
-                    if (data && data.code === 200) {
+                    if (data && data.code === 0) {
                         this.linkList = data.linkList
                     }
                 })

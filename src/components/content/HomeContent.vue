@@ -37,7 +37,6 @@
     import Recommend from '../../components/views/Recommend'
     import HotRead from '../../components/views/HotRead'
     import SideToc from '../../components/views/SideToc'
-    import merge from 'lodash/' // 合并对象工具
     import {DefaultFilterList, DefaultLimitSize} from '../../common/js/const'
 
     export default {
@@ -72,7 +71,7 @@
         },
         methods: {
             refreshArticle(param) {
-                let params = merge(param, this.pageParam);
+                let params = Object.assign(param, this.pageParam);
                 this.$http({
                     url: this.$http.adornUrl('article/page'),
                     params: this.$http.adornParams(params, false),

@@ -5,8 +5,8 @@
         <div class="top-area">
           <img src="../../../assets/background.jpg" alt="">
           <div class="site-info">
-            <h1 class="site-name">DB's Blog</h1>
-            <h1 class="site-desc">Write the code, Change the World</h1>
+            <h1 class="site-name">HUSKY STUDIO</h1>
+            <h1 class="site-desc">乐队排练 X 录音编曲 X 乐器培训 X 乐器销售</h1>
           </div>
         </div>
         <div class="sidebar-menus" >

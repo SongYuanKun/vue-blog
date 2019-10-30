@@ -89,7 +89,7 @@
                     params: this.$http.adornParams(params),
                     method: 'get'
                 }).then(({data}) => {
-                    if (data && data.code === 200) {
+                    if (data && data.code === 0) {
                         this.bookList = data.page.list
                         this.readingBookList = this.bookList.filter(book => {
                             if (book.reading) {
@@ -111,7 +111,7 @@
                     params: this.$http.adornParams(params),
                     method: 'get'
                 }).then(({data}) => {
-                    if (data && data.code === 200) {
+                    if (data && data.code === 0) {
                         if (data.page.totalPage <= data.page.currPage) {
                             this.noMoreData = true
                         } else {
@@ -166,7 +166,7 @@
                     params: this.$http.adornParams(params),
                     method: 'get'
                 }).then(({data}) => {
-                    if (data && data.code === 200) {
+                    if (data && data.code === 0) {
                         if (data.page.totalPage <= data.page.currPage) {
                             this.noMoreData = true
                         } else {

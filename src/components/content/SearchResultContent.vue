@@ -42,7 +42,7 @@
                     type: 'get',
                     params: this.$http.adornParams({keywords: this.$route.query.keywords})
                 }).then(({data}) => {
-                    if (data && data.code === 200) {
+                    if (data && data.code === 0) {
                         this.articleList = data.articleList
                         if (this.articleList.length > 0) {
                             this.articleList.map(article => {
