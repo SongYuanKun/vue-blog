@@ -1,28 +1,28 @@
 <template>
-  <div class="timeline-content">
-    <iv-row>
-      <iv-col :xs="24" :sm="24" :md="24" :lg="17">
-        <div class="layout-left">
-          <timeline-header></timeline-header>
-          <div v-for="year in timelineList" :key="year.year" v-if="year.months.length > 0">
-            <archive-list-time-title :date="year.year" :count="year.count"></archive-list-time-title>
-            <div v-for="month in year.months" :key="month.month" v-if="month.posts.length > 0">
-              <archive-list-time-title :date="month.month + '月'" :count="month.count"
-                                       :dateType="'month'"></archive-list-time-title>
-              <archive-list-cell v-for="post in month.posts" :post="post"
-                                 :key="post.title"></archive-list-cell>
-            </div>
-          </div>
-        </div>
-      </iv-col>
-      <iv-col :xs="0" :sm="0" :md="0" :lg="7">
-        <div class="layout-right">
-          <recommend></recommend>
-          <tag-wall style="margin-top: 15px;"></tag-wall>
-        </div>
-      </iv-col>
-    </iv-row>
-  </div>
+    <div class="timeline-content">
+        <iv-row>
+            <iv-col :lg="17" :md="24" :sm="24" :xs="24">
+                <div class="layout-left">
+                    <timeline-header></timeline-header>
+                    <div :key="year.year" v-for="year in timelineList" v-if="year.months.length > 0">
+                        <archive-list-time-title :count="year.count" :date="year.year"></archive-list-time-title>
+                        <div :key="month.month" v-for="month in year.months" v-if="month.posts.length > 0">
+                            <archive-list-time-title :count="month.count" :date="month.month + '月'"
+                                                     :dateType="'month'"></archive-list-time-title>
+                            <archive-list-cell :key="post.title" :post="post"
+                                               v-for="post in month.posts"></archive-list-cell>
+                        </div>
+                    </div>
+                </div>
+            </iv-col>
+            <iv-col :lg="7" :md="0" :sm="0" :xs="0">
+                <div class="layout-right">
+                    <recommend></recommend>
+                    <tag-wall style="margin-top: 15px;"></tag-wall>
+                </div>
+            </iv-col>
+        </iv-row>
+    </div>
 </template>
 
 <script type="text/ecmascript-6">
@@ -65,27 +65,27 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  .timeline-content
-    width auto
-    @media only screen and (max-width: 768px)
-      margin 5px 5px 10px 5px
-    @media screen and (min-width: 768px)
-      margin 10px 10px 20px 10px
-    @media screen and (min-width: 992px)
-      margin 15px 35px 50px 35px
-    @media screen and (min-width: 1200px)
-      width 1200px
-      margin 15px auto 0
-      margin-bottom 50px
+    .timeline-content
+        width auto
+        @media only screen and (max-width: 768px)
+            margin 5px 5px 10px 5px
+        @media screen and (min-width: 768px)
+            margin 10px 10px 20px 10px
+        @media screen and (min-width: 992px)
+            margin 15px 35px 50px 35px
+        @media screen and (min-width: 1200px)
+            width 1200px
+            margin 15px auto 0
+            margin-bottom 50px
 
-    .layout-left, .layout-right
-      padding 0
-      @media only screen and (max-width: 768px)
-        padding 0
-      @media screen and (min-width: 768px)
-        padding 0
-      @media screen and (min-width: 992px)
-        padding 0 10px
-      @media screen and (min-width: 1200px)
-        padding 0 10px
+        .layout-left, .layout-right
+            padding 0
+            @media only screen and (max-width: 768px)
+                padding 0
+            @media screen and (min-width: 768px)
+                padding 0
+            @media screen and (min-width: 992px)
+                padding 0 10px
+            @media screen and (min-width: 1200px)
+                padding 0 10px
 </style>
