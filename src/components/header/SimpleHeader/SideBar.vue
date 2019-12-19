@@ -13,7 +13,7 @@
           <div class="site-nav">
             <p>
               <iv-icon type="map"></iv-icon>
-              文章导航
+              {{$t("sideBar.articleNavigation")}}
             </p>
           </div>
           <ul class="nav-menu">

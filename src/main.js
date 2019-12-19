@@ -5,6 +5,7 @@ import 'iview/dist/styles/iview.css'
 import '@/common/stylus/index.styl'
 import App from './App.vue'
 import httpRequest from './utils/httpRequest'
+import VueI18n from 'vue-i18n'
 // iView UI 组件引入
 import {Affix, Button, Col, Icon, Message, Notice, Progress, Rate, Row, Tag} from 'iview'
 
@@ -17,6 +18,7 @@ Vue.component('iv-icon', Icon);
 Vue.component('iv-affix', Affix);
 Vue.component('iv-rate', Rate);
 
+Vue.use(VueI18n);
 
 Vue.prototype.$http = httpRequest;
 Vue.prototype.$Message = Message;
@@ -25,12 +27,11 @@ const i18n = new VueI18n({
     locale: 'zh-CN',    // 语言标识
     //this.$i18n.locale // 通过切换locale的值来实现语言切换
     messages: {
-        'zh-CN': require('./common/lang/zh'),   // 中文语言包
-        'en-US': require('./common/lang/en')    // 英文语言包
+        'zh-CN': require('./common/lang/zh.json'),   // 中文语言包
+        'en-US': require('./common/lang/en.json')    // 英文语言包
     }
 });
 
-Vue.use(VueI18n);
 
 Vue.directive('title', {
     inserted: function (el) {
