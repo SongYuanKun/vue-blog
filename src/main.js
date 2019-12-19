@@ -17,7 +17,6 @@ Vue.component('iv-icon', Icon);
 Vue.component('iv-affix', Affix);
 Vue.component('iv-rate', Rate);
 
-Vue.use(VueI18n);
 
 Vue.prototype.$http = httpRequest;
 Vue.prototype.$Message = Message;
@@ -31,6 +30,7 @@ const i18n = new VueI18n({
     }
 });
 
+Vue.use(VueI18n);
 
 Vue.directive('title', {
     inserted: function (el) {
