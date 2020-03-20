@@ -19,148 +19,148 @@ import SearchResultContent from '../components/content/SearchResultContent'
 Vue.use(Router)
 
 let router = new Router({
-  mode: 'history',
-  scrollBehavior: () => ({y: 0}),
-  routes: [
-    {
-      path: '/',
-      name: 'Index',
-      component: Index,
-      children: [
+    mode: 'history',
+    scrollBehavior: () => ({y: 0}),
+    routes: [
         {
-          path: '/',
-          name: 'index',
-          components: {
-            header: SimpleHeader,
-            content: HomeContent,
-            footer: CommonFooter
-          },
-          meta: {
-            title: '哈士奇工作室 | 乐队排练 X 录音编曲 X 乐器培训 X 乐器销售'
-          }
-        },
-        {
-          path: 'article/:articleId',
-          name: 'article',
-          components: {
-            header: SimpleHeader,
-            content: ArticleContent,
-            footer: CommonFooter
-          }
-        },
-        {
-          path: 'articles',
-          name: 'articles',
-          components: {
-            header: SimpleHeader,
-            content: ArticleListContent,
-            footer: CommonFooter
-          },
-          meta: {
-            title: '博文列表 | 哈士奇工作室 | 乐队排练 X 录音编曲 X 乐器培训 X 乐器销售'
-          }
-        },
-        {
-          path: 'articles/category/:id',
-          name: 'articles/category',
-          components: {
-            header: SimpleHeader,
-            content: ArticleListContent,
-            footer: CommonFooter
-          },
-          meta: {
-            title: '博文列表 | 哈士奇工作室 | 乐队排练 X 录音编曲 X 乐器培训 X 乐器销售'
-          }
-        },
-        {
-          path: 'articles/search',
-          name: 'search',
-          components: {
-            header: SimpleHeader,
-            content: SearchResultContent,
-            footer: CommonFooter
-          },
-          meta: {
-            title: '博文搜索 | 哈士奇工作室 | 乐队排练 X 录音编曲 X 乐器培训 X 乐器销售'
-          }
-        },
-        {
-          path: 'bookNote/:bookNoteId',
-          name: 'bookNote',
-          components: {
-            header: SimpleHeader,
-            content: BookNoteContent,
-            footer: CommonFooter
-          }
-        },
-        {
-          path: 'book/:bookId',
-          name: 'book',
-          components: {
-            header: SimpleHeader,
-            content: BookContent,
-            footer: CommonFooter
-          }
-        },
-        {
-          path: 'books',
-          name: 'books',
-          components: {
-            header: SimpleHeader,
-            content: BookListContent,
-            footer: CommonFooter
-          },
-          meta: {
-            title: '阅读 | 哈士奇工作室 | 乐队排练 X 录音编曲 X 乐器培训 X 乐器销售'
-          }
-        },
-        {
-          path: 'books/category/:id',
-          name: 'books/category',
-          components: {
-            header: SimpleHeader,
-            content: BookListContent,
-            footer: CommonFooter
-          },
-          meta: {
-            title: '阅读 | 哈士奇工作室 | 乐队排练 X 录音编曲 X 乐器培训 X 乐器销售'
-          }
-        },
-        {
-          path: 'timeline',
-          name: 'timeline',
-          components: {
-            header: SimpleHeader,
-            content: TimeLineContent,
-            footer: CommonFooter
-          },
-          meta: {
-            title: '时间轴 | 哈士奇工作室 | 乐队排练 X 录音编曲 X 乐器培训 X 乐器销售'
-          }
+            path: '/',
+            name: 'Index',
+            component: Index,
+            children: [
+                {
+                    path: '/',
+                    name: 'index',
+                    components: {
+                        header: SimpleHeader,
+                        content: HomeContent,
+                        footer: CommonFooter
+                    },
+                    meta: {
+                        title: '哈士奇工作室 | 乐队排练 X 录音编曲 X 乐器培训 X 乐器销售'
+                    }
+                },
+                {
+                    path: 'article/:articleId',
+                    name: 'article',
+                    components: {
+                        header: SimpleHeader,
+                        content: ArticleContent,
+                        footer: CommonFooter
+                    }
+                },
+                {
+                    path: 'articles',
+                    name: 'articles',
+                    components: {
+                        header: SimpleHeader,
+                        content: ArticleListContent,
+                        footer: CommonFooter
+                    },
+                    meta: {
+                        title: '博文列表 | 哈士奇工作室 | 乐队排练 X 录音编曲 X 乐器培训 X 乐器销售'
+                    }
+                },
+                {
+                    path: 'articles/category/:id',
+                    name: 'articles/category',
+                    components: {
+                        header: SimpleHeader,
+                        content: ArticleListContent,
+                        footer: CommonFooter
+                    },
+                    meta: {
+                        title: '博文列表 | 哈士奇工作室 | 乐队排练 X 录音编曲 X 乐器培训 X 乐器销售'
+                    }
+                },
+                {
+                    path: 'articles/search',
+                    name: 'search',
+                    components: {
+                        header: SimpleHeader,
+                        content: SearchResultContent,
+                        footer: CommonFooter
+                    },
+                    meta: {
+                        title: '博文搜索 | 哈士奇工作室 | 乐队排练 X 录音编曲 X 乐器培训 X 乐器销售'
+                    }
+                },
+                {
+                    path: 'bookNote/:bookNoteId',
+                    name: 'bookNote',
+                    components: {
+                        header: SimpleHeader,
+                        content: BookNoteContent,
+                        footer: CommonFooter
+                    }
+                },
+                {
+                    path: 'book/:bookId',
+                    name: 'book',
+                    components: {
+                        header: SimpleHeader,
+                        content: BookContent,
+                        footer: CommonFooter
+                    }
+                },
+                {
+                    path: 'books',
+                    name: 'books',
+                    components: {
+                        header: SimpleHeader,
+                        content: BookListContent,
+                        footer: CommonFooter
+                    },
+                    meta: {
+                        title: '阅读 | 哈士奇工作室 | 乐队排练 X 录音编曲 X 乐器培训 X 乐器销售'
+                    }
+                },
+                {
+                    path: 'books/category/:id',
+                    name: 'books/category',
+                    components: {
+                        header: SimpleHeader,
+                        content: BookListContent,
+                        footer: CommonFooter
+                    },
+                    meta: {
+                        title: '阅读 | 哈士奇工作室 | 乐队排练 X 录音编曲 X 乐器培训 X 乐器销售'
+                    }
+                },
+                {
+                    path: 'timeline',
+                    name: 'timeline',
+                    components: {
+                        header: SimpleHeader,
+                        content: TimeLineContent,
+                        footer: CommonFooter
+                    },
+                    meta: {
+                        title: '时间轴 | 哈士奇工作室 | 乐队排练 X 录音编曲 X 乐器培训 X 乐器销售'
+                    }
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 })
 
 // 配置加载进度条
 LoadingBar.config({
-  color: '#5cb85c',
-  failedColor: '#f0ad4e',
-  height: 2
+    color: '#5cb85c',
+    failedColor: '#f0ad4e',
+    height: 2
 })
 
 router.beforeEach((to, from, next) => {
-  LoadingBar.start()
-  if (to.meta.title) {
-    document.title = to.meta.title
-  }
-  next()
+    LoadingBar.start()
+    if (to.meta.title) {
+        document.title = to.meta.title
+    }
+    next()
 })
 
 router.afterEach((to, from, next) => {
-  LoadingBar.finish()
-  window.scrollTo(0, 0)
+    LoadingBar.finish()
+    window.scrollTo(0, 0)
 })
 
 export default router
