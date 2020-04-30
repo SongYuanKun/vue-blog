@@ -24,7 +24,7 @@
                 </div>
                 <ul class="others">
                     <li v-for="hotRead in hotReadList" :key="hotRead.id">
-                        <a :href="'/' + hotRead.urlType + '/' +hotRead.linkId">
+                        <a :href="'/' + hotRead.urlType + '/' +hotRead.id">
                             <p class="title">{{hotRead.title}}</p>
                             <p class="info">
                                 <span class="time">{{hotRead.createTime | socialDate }}</span>
