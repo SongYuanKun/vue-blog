@@ -15,6 +15,7 @@ import ArticleListContent from '../components/content/ArticleListContent'
 import BookListContent from '../components/content/BookListContent'
 import TimeLineContent from '../components/content/TimeLineContent'
 import SearchResultContent from '../components/content/SearchResultContent'
+import PageNotFound from '../components/views/PageNotFound'
 
 Vue.use(Router)
 
@@ -137,8 +138,24 @@ let router = new Router({
                     meta: {
                         title: '时间轴 | 哈士奇工作室 | 乐队排练 X 录音编曲 X 乐器培训 X 乐器销售'
                     }
+                },
+                {
+                    path: '404',
+                    name: '404',
+                    components: {
+                        header: SimpleHeader,
+                        content: PageNotFound,
+                        footer: CommonFooter
+                    },
+                    meta: {
+                        title: '页面找不到 | 哈士奇工作室 | 乐队排练 X 录音编曲 X 乐器培训 X 乐器销售'
+                    }
                 }
             ]
+        },
+        {
+            path: '*',
+            component: PageNotFound
         }
     ]
 })

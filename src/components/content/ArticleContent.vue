@@ -1,18 +1,18 @@
 <template>
     <div class="article-content" v-cloak>
         <iv-row>
-            <iv-col :xs="24" :sm="24" :md="24" :lg="17">
+            <iv-col :lg="17" :md="24" :sm="24" :xs="24">
                 <div class="layout-left">
                     <article-page-header :article="article"></article-page-header>
                     <article-page-content>
-                        <article id="article-main-page" class="typo container" slot="content" ref="article"
+                        <article class="typo container" id="article-main-page" ref="article" slot="content"
                                  v-html="article.contentFormat">
                         </article>
                     </article-page-content>
                     <article-page-footer :postId="article.id"></article-page-footer>
                 </div>
             </iv-col>
-            <iv-col :xs="0" :sm="0" :md="0" :lg="7">
+            <iv-col :lg="7" :md="0" :sm="0" :xs="0">
                 <div class="layout-right">
                     <recommend></recommend>
                     <iv-affix :offset-top="60">
@@ -74,7 +74,9 @@
                             this.addCodeLineNumber();
                             this.refreshDirectory();
                             this.refreshMobileDirectory();
-                        })
+                        });
+                    } else if (data && data.code === 404) {
+                        this.$router.replace({path: '/404'})
                     }
                 })
             },
