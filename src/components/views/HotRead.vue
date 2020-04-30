@@ -3,7 +3,7 @@
         <panel :title="'最热阅读'">
             <div slot="content" class="content">
                 <div class="top" v-if="topHotRead">
-                    <a :href="'/article/' + topHotRead.linkId">
+                    <a :href="'/article/' + topHotRead.id">
                         <p class="title">{{topHotRead.title}}</p>
                         <div class="tags">
                             <iv-tag :color="index | mapTagColor" v-for="(tag , index)  in topHotRead.tagList"
