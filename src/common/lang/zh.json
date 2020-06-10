@@ -1,8 +1,16 @@
 {
   "sideBar": {
-    "articleNavigation": "文章导航"
+    "articleNavigation": "文章导航",
+    "siteName": "HUSKY STUDIO",
+    "siteDesc": "乐队排练 X 录音编曲 X 乐器培训 X 乐器销售"
   },
   "simpleHeader": {
-    "article": "文章"
+    "article": "文章",
+    "title": "HUSKY STUDIO",
+    "motto": "乐队排练 X 录音编曲 X 乐器培训 X 乐器销售"
+  },
+  "about": {
+    "name": "HUSKY STUDIO",
+    "desc": "乐队排练 X 录音编曲 X 乐器培训 X 乐器销售"
   }
 }

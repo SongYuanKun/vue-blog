@@ -28,7 +28,8 @@ const i18n = new VueI18n({
     //this.$i18n.locale // 通过切换locale的值来实现语言切换
     messages: {
         'zh-CN': require('./common/lang/zh.json'),   // 中文语言包
-        'en-US': require('./common/lang/en.json')    // 英文语言包
+        'en-US': require('./common/lang/en.json'),  // 英文语言包
+        'bai': require('./common/lang/bai.json')    // 英文语言包
     }
 });
 

@@ -10,8 +10,8 @@
             <div id="header" v-show="show">
                 <router-link id="logo" to="/">
                     <img src="../../../assets/logo.png">
-                    <span class="title">HUSKY STUDIO</span>
-                    <span class="motto">乐队排练 X 录音编曲 X 乐器培训 X 乐器销售</span>
+                    <span class="title">{{$t("simpleHeader.title")}}</span>
+                    <span class="motto">{{$t("simpleHeader.motto")}}</span>
                 </router-link>
                 <ul id="nav">
                     <li>
