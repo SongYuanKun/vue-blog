@@ -24,7 +24,7 @@ Vue.prototype.$http = httpRequest;
 Vue.prototype.$Message = Message;
 Vue.prototype.$Notice = Notice;
 
-const env = "";
+let env = "husky";
 let locale = "zh-CN";
 if (env === "bai") {
     locale = "bai";
