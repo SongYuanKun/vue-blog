@@ -24,11 +24,13 @@ Vue.prototype.$http = httpRequest;
 Vue.prototype.$Message = Message;
 Vue.prototype.$Notice = Notice;
 
-let env = "husky";
+let myEnv = "husky";
 let locale = "zh-CN";
-if (env === "bai") {
+if (myEnv === "bai") {
     locale = "bai";
 }
+
+Vue.prototype.$http.headers.common['env'] = myEnv;
 
 const i18n = new VueI18n({
     locale: locale,    // 语言标识

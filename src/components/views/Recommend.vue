@@ -1,13 +1,13 @@
 <template>
     <div class="recommend">
         <panel :title="'推荐阅读'">
-            <div slot="content" class="content">
+            <div class="content" slot="content">
                 <div class="top" v-if="topRecommend">
                     <a :href="'/article/' + topRecommend.id">
                         <p class="title">{{topRecommend.title}}</p>
                         <div class="tags">
-                            <iv-tag :color="index | mapTagColor" v-for="(tag,index) in topRecommend.tagList"
-                                    :key="tag.id">{{tag.name}}
+                            <iv-tag :color="index | mapTagColor" :key="tag.id"
+                                    v-for="(tag,index) in topRecommend.tagList">{{tag.name}}
                             </iv-tag>
                         </div>
                         <p class="info">
@@ -25,7 +25,7 @@
                     </a>
                 </div>
                 <ul class="others">
-                    <li v-for="recommend in recommendList" :key="recommend.id">
+                    <li :key="recommend.id" v-for="recommend in recommendList">
                         <a :href="'/article/' +recommend.id">
                             <p class="title">{{recommend.title}}</p>
                             <p class="info">
@@ -46,11 +46,11 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import {mixin} from '../../utils/index'
-  import Panel from '../utils/Panel'
-  import {mapTagColor} from "../../utils";
+    import {mixin} from '../../utils/index'
+    import Panel from '../utils/Panel'
+    import {mapTagColor} from "../../utils";
 
-  export default {
+    export default {
         data() {
             return {
                 recommendList: [],
