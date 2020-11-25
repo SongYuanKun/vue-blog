@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "axios": "0.17.1",
-    "highlight.js": "^9.12.0",
+    "highlight.js": "^10.1.2",
     "iview": "^2.14.2",
     "live2d-widget-model-shizuku": "^1.0.5",
     "live2d-widget-model-wanko": "^1.0.5",
