@@ -24,13 +24,8 @@ Vue.prototype.$http = httpRequest;
 Vue.prototype.$Message = Message;
 Vue.prototype.$Notice = Notice;
 
-let myEnv = "husky";
 let locale = "zh-CN";
-if (myEnv === "bai") {
-    locale = "bai";
-}
 
-Vue.prototype.$http.headers.common['env'] = myEnv;
 
 const i18n = new VueI18n({
     locale: locale,    // 语言标识
@@ -38,7 +33,6 @@ const i18n = new VueI18n({
     messages: {
         'zh-CN': require('./common/lang/zh.json'),   // 中文语言包
         'en-US': require('./common/lang/en.json'),  // 英文语言包
-        'bai': require('./common/lang/bai.json')    // 英文语言包
     }
 });
 

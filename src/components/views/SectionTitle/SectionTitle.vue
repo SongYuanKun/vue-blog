@@ -43,7 +43,7 @@ export default {
         display inline-block
         height 30px
         width 30px
-        background #000000
+        background #409eff
         vertical-align middle
       .main-title
         display inline-block
