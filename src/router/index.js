@@ -16,6 +16,7 @@ import BookListContent from '../components/content/BookListContent'
 import TimeLineContent from '../components/content/TimeLineContent'
 import SearchResultContent from '../components/content/SearchResultContent'
 import PageNotFound from '../components/views/PageNotFound'
+import Demo from "../components/content/Demo";
 
 Vue.use(Router)
 
@@ -56,6 +57,16 @@ let router = new Router({
                         header: SimpleHeader,
                         content: ArticleListContent,
                         footer: CommonFooter
+                    },
+                    meta: {
+                        title: '博文列表 | 哈士奇工作室 | 乐队排练 X 录音编曲 X 乐器培训 X 乐器销售'
+                    }
+                },
+                {
+                    path: 'demo',
+                    name: 'demo',
+                    components: {
+                        content: Demo
                     },
                     meta: {
                         title: '博文列表 | 哈士奇工作室 | 乐队排练 X 录音编曲 X 乐器培训 X 乐器销售'
